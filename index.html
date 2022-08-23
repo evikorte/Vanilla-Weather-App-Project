@@ -17,18 +17,81 @@
     <div class="container">
       <div class="card">
         <div class="row">
-          <div class="col-6">
-            <img
-              src="../Vanilla-Weather-App-Project/img/cities.png"
-              alt="World cities"
-            />
-            <div class="col-6">
-              <div id="present-city">London</div>
-              <div id="current-time">Tuesday, 23th of August, 2022 15:00</div>
-              <div id="present-temp">..</div>
-              <div id="celsius-sign">°C</div>
-              /
-              <div id=" fahrenheit-sign">°F</div>
+          <div class="col-md-6">
+            <img src="img/cities.png" alt="World cities" id="cities-pic" />
+          </div>
+          <div class="col-md-6">
+            <div id="present-city">London</div>
+            <div id="current-time">Tuesday, 23th of August, 2022 15:00</div>
+            <div id="present-temp">23</div>
+            <div id="celsius-sign">
+              °C / <span id=" fahrenheit-sign">°F</span>
+            </div>
+          </div>
+        </div>
+
+        <form action="search-engine">
+          <input
+            type="text"
+            placeholder="Choose your Location"
+            name="City"
+            id="city"
+          />
+          <input type="submit" value="Search" id="search-button" />
+        </form>
+        <div class="hourlyForcast">
+          <div class="row todayHours">
+            <div class="col-md-2 now">15:22</div>
+            <div class="col-md-2 nowRound">16:00</div>
+            <div class="col-md-2 nowRound+2">18:00</div>
+            <div class="col-md-2 nowRound+4">20:00</div>
+            <div class="col-md-2 nowRound+6">22:00</div>
+            <div class="col-md-2 nowRound+8">24:00</div>
+          </div>
+          <div class="row todayEmoji">
+            <div class="col-md-2 nowEmoji">😊</div>
+            <div class="col-md-2 nowRoundEmoji">😊</div>
+            <div class="col-md-2 nowRoundEmoji+2">🌧️</div>
+            <div class="col-md-2 nowRoundEmoji+4">🌥️</div>
+            <div class="col-md-2 nowRoundEmoji+6">😊</div>
+            <div class="col-md-2 nowRoundEmoji+8">😊</div>
+          </div>
+          <div class="row todayTemp">
+            <div class="col-md-2 nowTemp">
+              25
+              <div id="celsius-sign">
+                °C / <span id=" fahrenheit-sign">°F</span>
+              </div>
+            </div>
+            <div class="col-md-2 nowRoundTemp">
+              25
+              <div id="celsius-sign">
+                °C / <span id=" fahrenheit-sign">°F</span>
+              </div>
+            </div>
+            <div class="col-md-2 nowRoundTemp+2">
+              25
+              <div id="celsius-sign">
+                °C / <span id=" fahrenheit-sign">°F</span>
+              </div>
+            </div>
+            <div class="col-md-2 nowRoundTemp+4">
+              25
+              <div id="celsius-sign">
+                °C / <span id=" fahrenheit-sign">°F</span>
+              </div>
+            </div>
+            <div class="col-md-2 nowRoundTemp+6">
+              25
+              <div id="celsius-sign">
+                °C / <span id=" fahrenheit-sign">°F</span>
+              </div>
+            </div>
+            <div class="col-md-2 nowRoundTemp+8">
+              25
+              <div id="celsius-sign">
+                °C / <span id=" fahrenheit-sign">°F</span>
+              </div>
             </div>
           </div>
         </div>
