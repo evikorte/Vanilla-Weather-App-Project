@@ -12,32 +12,40 @@
       integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx"
       crossorigin="anonymous"
     />
-     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Cormorant+SC&family=Pacifico&family=Square+Peg&display=swap"
       rel="stylesheet"
     />
-
   </head>
   <body>
     <div class="container">
       <div class="card">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="img/cities.png" alt="World cities" id="cities-pic" />
-          </div>
-          <div class="col-md-6">
+        <div class="row upperrow">
+          <div class="col-md-6"></div>
+          <div class="col-md-6 citydetails">
             <div id="present-city">London</div>
-            <div id="current-time">Tuesday, 23th of August, 2022 15:00</div>
+            <div id="present-time">Tuesday, 23th of August, 2022 15:22</div>
             <div id="present-temp">23</div>
             <div id="celsius-sign">
               °C / <span id=" fahrenheit-sign">°F</span>
             </div>
+            <div id="extra-info">
+              <div id="present-precipitation">
+                Precipitation: <span id="precipitation-value">0</span>%
+              </div>
+              <div id="present-humidity">
+                Humidity: <span id="humidity-value">73</span>%
+              </div>
+              <div id="present-wind">
+                Wind: <span id="wind-value">2</span>km/h
+              </div>
+            </div>
           </div>
         </div>
 
-        <form action="search-engine">
+        <form action="search-engine" id="search-engine">
           <input
             type="text"
             placeholder="Choose your Location"
@@ -45,50 +53,50 @@
             id="city"
           />
           <input type="submit" value="Search" id="search-button" />
-          <button>🧭</button>
+          <button id="current-position-button">🧭</button>
         </form>
         <br />
         <div class="hourlyForcast">
           <div class="row todayHours">
-            <div class="col-md-2 now">15:22</div>
-            <div class="col-md-2 nowRound">16:00</div>
-            <div class="col-md-2 nowRound+2">18:00</div>
-            <div class="col-md-2 nowRound+4">20:00</div>
-            <div class="col-md-2 nowRound+6">22:00</div>
+            <div class="col now">15:22</div>
+            <div class="col nowRound">16:00</div>
+            <div class="col nowRound+2">18:00</div>
+            <div class="col nowRound+4">20:00</div>
+            <div class="col nowRound+6">22:00</div>
           </div>
           <div class="row todayEmoji">
-            <div class="col-md-2 nowEmoji">😊</div>
-            <div class="col-md-2 nowRoundEmoji">😊</div>
-            <div class="col-md-2 nowRoundEmoji+2">🌧️</div>
-            <div class="col-md-2 nowRoundEmoji+4">🌥️</div>
-            <div class="col-md-2 nowRoundEmoji+6">😊</div>
+            <div class="col nowEmoji">😊</div>
+            <div class="col nowRoundEmoji">😊</div>
+            <div class="col nowRoundEmoji+2">🌧️</div>
+            <div class="col nowRoundEmoji+4">🌥️</div>
+            <div class="col nowRoundEmoji+6">😊</div>
           </div>
           <div class="row todayTemp">
-            <div class="col-md-2 nowTemp">
+            <div class="col nowTemp">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 nowRoundTemp">
+            <div class="col nowRoundTemp">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 nowRoundTemp+2">
+            <div class="col nowRoundTemp+2">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 nowRoundTemp+4">
+            <div class="col nowRoundTemp+4">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 nowRoundTemp+6">
+            <div class="col nowRoundTemp+6">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
@@ -99,46 +107,46 @@
         <br />
         <div class="dailyForcast">
           <div class="row days">
-            <div class="col-md-2 tomorrow">Tomorrow</div>
-            <div class="col-md-2 tomorrow+1">The day after tomorrow</div>
-            <div class="col-md-2 tomorrow+2">Today+3 day</div>
-            <div class="col-md-2 tomorrow+3">Today+4 days</div>
-            <div class="col-md-2 tomorrow+4">Today+5 days</div>
+            <div class="col tomorrow">Tomorrow</div>
+            <div class="col tomorrow+1">The day after tomorrow</div>
+            <div class="col tomorrow+2">Today+3 day</div>
+            <div class="col tomorrow+3">Today+4 days</div>
+            <div class="col tomorrow+4">Today+5 days</div>
           </div>
           <div class="row daysEmoji">
-            <div class="col-md-2 tomorrowEmoji">😊</div>
-            <div class="col-md-2 tomorrowEmoji+1">😊</div>
-            <div class="col-md-2 tomorrowEmoji+2">🌧️</div>
-            <div class="col-md-2 tomorrowEmoji+3">🌥️</div>
-            <div class="col-md-2 tomorrowEmoji+4">😊</div>
+            <div class="col tomorrowEmoji">😊</div>
+            <div class="col tomorrowEmoji+1">😊</div>
+            <div class="col tomorrowEmoji+2">🌧️</div>
+            <div class="col tomorrowEmoji+3">🌥️</div>
+            <div class="col tomorrowEmoji+4">😊</div>
           </div>
 
           <div class="row daysTemp">
-            <div class="col-md-2 tomorrowTemp">
+            <div class="col tomorrowTemp">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 tomorrowTemp+1">
+            <div class="col tomorrowTemp+1">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 tomorrowTemp+2">
+            <div class="col tomorrowTemp+2">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 tomorrowTemp+3">
+            <div class="col tomorrowTemp+3">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col-md-2 tomorrowTemp+4">
+            <div class="col tomorrowTemp+4">
               25
               <div id="celsius-sign">
                 °C / <span id=" fahrenheit-sign">°F</span>
@@ -146,13 +154,17 @@
             </div>
           </div>
         </div>
-      </div id="code-reference">
-      Coded by
-      <a href="https://github.com/evikorte/Vanilla-Weather-App-Project" target="_blank"
-        >evikorte</a
-      >
+        <div id="code-reference">
+          Coded by
+          <a
+            href="https://github.com/evikorte/Vanilla-Weather-App-Project"
+            target="_blank"
+            id="git-hub-link"
+            >evikorte</a
+          >
+        </div>
+      </div>
     </div>
-
     <script src="src/app.js"></script>
   </body>
 </html>

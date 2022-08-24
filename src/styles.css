@@ -1,5 +1,47 @@
-body {
+.card {
   font-family: "Pacifico", cursive;
+  text-shadow: 1px 1px black;
+  color: white;
   font-weight: bold;
   margin: 50px;
+  padding: 20px;
+  background-image: url(../img/leafpic.jpg);
+  background-size: 100%;
+  max-width: 500px;
+}
+
+.citydetails {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#present-city,
+#present-temp {
+  font-size: 25px;
+}
+#extra-info {
+  font-size: 15px;
+  text-align: right;
+}
+form {
+  margin-left: 20px;
+  background-color: transparent;
+}
+
+#city,
+#search-button,
+#current-position-button,
+#code-reference {
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+.col {
+  text-align: center;
+}
+
+#code-reference {
+  padding: 20px 10px;
+  border-radius: 5px;
+  text-align: center;
 }
