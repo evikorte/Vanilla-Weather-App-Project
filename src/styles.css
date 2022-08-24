@@ -1,3 +1,7 @@
+form {
+  margin: 0px 20px;
+  background-color: transparent;
+}
 .container {
   margin: 30px auto;
 }
@@ -11,24 +15,32 @@
   background-size: 100%;
   max-width: 500px;
   margin: 0 auto;
+  border-radius: 5px;
 }
-
-.citydetails {
-  text-align: center;
-  padding-bottom: 20px;
+.upperrow {
+  padding: 10px 20px;
+}
+#metrics {
+  font-size: 14px;
+  position: relative;
+  top: -10px;
+}
+#icon {
+  font-size: 27px;
+}
+.cityDetails {
+  text-align: left;
+  padding: 20px auto;
 }
 
 #present-city,
-#present-temp {
-  font-size: 25px;
+#present-temperature {
+  font-size: 27px;
 }
-#extra-info {
+.extraInfo {
   font-size: 15px;
   text-align: right;
-}
-form {
-  margin-left: 20px;
-  background-color: transparent;
+  vertical-align: bottom;
 }
 
 #city,

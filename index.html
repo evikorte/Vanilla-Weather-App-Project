@@ -23,24 +23,29 @@
     <div class="container">
       <div class="card">
         <div class="row upperrow">
-          <div class="col-md-6"></div>
-          <div class="col-md-6 citydetails">
+          <div class="col-md-6 cityDetails">
             <div id="present-city">London</div>
             <div id="present-time">Tuesday, 23th of August, 2022 15:22</div>
-            <div id="present-temp">23</div>
-            <div id="celsius-sign">
-              °C / <span id=" fahrenheit-sign">°F</span>
+            <div id="present-temperature">
+              23
+              <span id="metrics"
+                ><span id="celsius-sign">
+                  °C / <span id=" fahrenheit-sign">°F</span>
+                </span></span
+              >
+              <div id="icon">😊</div>
             </div>
-            <div id="extra-info">
-              <div id="present-precipitation">
-                Precipitation: <span id="precipitation-value">0</span>%
-              </div>
-              <div id="present-humidity">
-                Humidity: <span id="humidity-value">73</span>%
-              </div>
-              <div id="present-wind">
-                Wind: <span id="wind-value">2</span>km/h
-              </div>
+            <br />
+          </div>
+          <div class="col-md-6 extraInfo">
+            <div id="present-precipitation">
+              Precipitation: <span id="precipitation-value">0</span>%
+            </div>
+            <div id="present-humidity">
+              Humidity: <span id="humidity-value">73</span>%
+            </div>
+            <div id="present-wind">
+              Wind: <span id="wind-value">2</span>km/h
             </div>
           </div>
         </div>
@@ -65,11 +70,11 @@
             <div class="col nowRound+6">22:00</div>
           </div>
           <div class="row todayEmoji">
-            <div class="col nowEmoji">😊</div>
-            <div class="col nowRoundEmoji">😊</div>
-            <div class="col nowRoundEmoji+2">🌧️</div>
-            <div class="col nowRoundEmoji+4">🌥️</div>
-            <div class="col nowRoundEmoji+6">😊</div>
+            <div class="col nowEmoji" id="icon">😊</div>
+            <div class="col nowRoundEmoji" id="icon">😊</div>
+            <div class="col nowRoundEmoji+2" id="icon">🌧️</div>
+            <div class="col nowRoundEmoji+4" id="icon">🌥️</div>
+            <div class="col nowRoundEmoji+6" id="icon">😊</div>
           </div>
           <div class="row todayTemp">
             <div class="col nowTemp">
@@ -114,11 +119,11 @@
             <div class="col tomorrow+4">Today+5 days</div>
           </div>
           <div class="row daysEmoji">
-            <div class="col tomorrowEmoji">😊</div>
-            <div class="col tomorrowEmoji+1">😊</div>
-            <div class="col tomorrowEmoji+2">🌧️</div>
-            <div class="col tomorrowEmoji+3">🌥️</div>
-            <div class="col tomorrowEmoji+4">😊</div>
+            <div class="col tomorrowEmoji" id="icon">😊</div>
+            <div class="col tomorrowEmoji+1" id="icon">😊</div>
+            <div class="col tomorrowEmoji+2" id="icon">🌧️</div>
+            <div class="col tomorrowEmoji+3" id="icon">🌥️</div>
+            <div class="col tomorrowEmoji+4" id="icon">😊</div>
           </div>
 
           <div class="row daysTemp">
