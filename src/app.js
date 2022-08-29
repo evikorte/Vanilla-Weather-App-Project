@@ -1,14 +1,34 @@
-function displayTemp(response) {
+function selectedCityResults(response) {
   console.log(response);
-  console.log(response.data.main.temp);
-  let currentTemp = Math.round(response.data.main.temp);
-  console.log(currentTemp);
+  console.log(response.data.name);
+  let currentCityNote = document.querySelector("#present-city");
+  currentCityNote.innerHTML = `Currently in ${response.data.name}:`;
+
+  let selectCityTemp = Math.round(response.data.main.temp);
+  selectCityTemp = selectCityTemp + `°C`;
+  console.log(selectCityTemp);
+  let currentTemp = document.querySelector("present-temperature");
+  currentTemp.innerHTML = `${selectCityTemp}`;
+
+  let selectWeatherState = response.data.weather[0].main;
+  console.log(selectWeatherState);
+  let currentState = document.querySelector("#description");
+  currentState.innerHTML = `${response.data.weather[0].main}`;
+
+
+
+function clickSearchButton(event) {
+  event.preventDefault();
+
+  let city = document.querySelector("#city").value;
+  let apiKey = "a38462addd821b469c162937a66aa309";
+  let unit = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
+
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(selectedCityResults);
 }
 
-let city = "London";
-let apiKey = "4770548bed49c5d96b7201c497695887";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
-console.log(apiUrl);
-
-axios.get(apiUrl).then(displayTemp);
+let form = document.querySelector("form");
+form.addEventListener("submit", clickSearchButton);
