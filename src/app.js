@@ -1,3 +1,6 @@
+// city + temp +description update 
+// extra info need to be added!
+
 function selectedCityResults(response) {
   console.log(response);
   console.log(response.data.name);
@@ -30,3 +33,34 @@ function clickSearchButton(event) {
 
 let form = document.querySelector("form");
 form.addEventListener("submit", clickSearchButton);
+
+// date update
+function dateUpdate (date) {
+    currentDate.innerHTML = `${currentDay}, ${currentHour}:${currentMinute}`;
+}
+
+let now = new Date();
+let days = ["Sunday", "Monday"
+"Tuesday",
+"Wednesday",
+"Thursday",
+"Friday",
+"Saturday"];
+
+let currentDay = days[now.getDay()];
+console.log(currentDay);
+
+let currentHour = now.getHours();
+if (currentHour < 10) {
+  currentHour = `0${currentHour}`;
+}
+let currentMinute = now.getMinutes();
+if (currentMinute < 10) {
+  currentMinute = `0${currentMinute}`;
+}
+
+console.log(currentHour);
+console.log(currentMinute);
+
+let currentDate = document.querySelector("#current-date");
+currentDate.addEventListener("submit", updateDate);
