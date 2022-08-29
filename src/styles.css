@@ -7,7 +7,7 @@ form {
 }
 .card {
   font-family: "Pacifico", cursive;
-  text-shadow: 1px 1px black;
+  text-shadow: 2px 2px black;
   color: white;
   font-weight: bold;
   padding: 20px;
@@ -33,14 +33,19 @@ form {
   padding: 20px auto;
 }
 
-#present-city,
+#present-city {
+  font-size: 30px;
+}
+#present-time,
 #present-temperature {
-  font-size: 27px;
+  font-size: 20px;
 }
 .extraInfo {
-  font-size: 15px;
+  font-size: 20px;
   text-align: right;
   vertical-align: bottom;
+  position: relative;
+  top: +80px;
 }
 
 #city,
