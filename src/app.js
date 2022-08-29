@@ -5,17 +5,15 @@ function selectedCityResults(response) {
   currentCityNote.innerHTML = `Currently in ${response.data.name}:`;
 
   let selectCityTemp = Math.round(response.data.main.temp);
-  selectCityTemp = selectCityTemp + `°C`;
   console.log(selectCityTemp);
-  let currentTemp = document.querySelector("present-temperature");
+  let currentTemp = document.querySelector("#present-degree");
   currentTemp.innerHTML = `${selectCityTemp}`;
 
   let selectWeatherState = response.data.weather[0].main;
   console.log(selectWeatherState);
   let currentState = document.querySelector("#description");
   currentState.innerHTML = `${response.data.weather[0].main}`;
-
-
+}
 
 function clickSearchButton(event) {
   event.preventDefault();
