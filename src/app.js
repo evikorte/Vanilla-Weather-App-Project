@@ -17,20 +17,20 @@ function selectedCityResults(response) {
   let currentState = document.querySelector("#description");
   currentState.innerHTML = `${response.data.weather[0].main}`;
 
-  let selectHumidity = response.data.main.humidity;
-  console.log(selectHumidity);
-  let currentHumidity = document.querySelector("#humidity-value");
-  currentHumidity.innerHTML = `${response.data.main.humidity}`;
+  let selectPressure = response.data.main.pressure;
+  console.log(selectPressure);
+  let currentPressure = document.querySelector("#pressure-value");
+  currentPressure.innerHTML = `${response.data.main.pressure}`;
 
   let selectWind = response.data.wind.speed;
   console.log(selectWind);
   let currentWind = document.querySelector("#wind-value");
   currentWind.innerHTML = `${response.data.wind.speed}`;
 
-  let selectPressure = response.data.main.pressure;
-  console.log(selectPressure);
-  let currentPressure = document.querySelector("#pressure-value");
-  currentPressure.innerHTML = `${response.data.main.pressure}`;
+  let selectHumidity = response.data.main.humidity;
+  console.log(selectHumidity);
+  let currentHumidity = document.querySelector("#humidity-value");
+  currentHumidity.innerHTML = `${response.data.main.humidity}`;
 }
 
 function clickSearchButton(event) {
@@ -83,3 +83,24 @@ console.log(currentMinute);
 
 let presentDate = document.querySelector("#present-time");
 form.addEventListener("submit", updateDate);
+
+//Current location function
+function searchCurrentLocation(position) {
+  let latitude = position.coords.latitude;
+  let longitude = position.coords.longitude;
+  let unit = "metric";
+  let apiKey = "a38462addd821b469c162937a66aa309";
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+  console.log(apiUrl);
+
+  axios.get(apiUrl).then(selectedCityResults);
+}
+
+function getCurrentLocation(event) {
+  event.preventDefault();
+  navigator.geolocation.getCurrentPosition(searchCurrentLocation);
+}
+
+let currentButton = document.querySelector("#current-position-button");
+currentButton.addEventListener("click", getCurrentLocation);
