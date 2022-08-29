@@ -1,4 +1,4 @@
-// city + temp +description update 
+// city + temp +description update
 // extra info need to be added!
 
 function selectedCityResults(response) {
@@ -16,6 +16,21 @@ function selectedCityResults(response) {
   console.log(selectWeatherState);
   let currentState = document.querySelector("#description");
   currentState.innerHTML = `${response.data.weather[0].main}`;
+
+  let selectHumidity = response.data.main.humidity;
+  console.log(selectHumidity);
+  let currentHumidity = document.querySelector("#humidity-value");
+  currentHumidity.innerHTML = `${response.data.main.humidity}`;
+
+  let selectWind = response.data.wind.speed;
+  console.log(selectWind);
+  let currentWind = document.querySelector("#wind-value");
+  currentWind.innerHTML = `${response.data.wind.speed}`;
+
+  let selectPressure = response.data.main.pressure;
+  console.log(selectPressure);
+  let currentPressure = document.querySelector("#pressure-value");
+  currentPressure.innerHTML = `${response.data.main.pressure}`;
 }
 
 function clickSearchButton(event) {
@@ -35,17 +50,21 @@ let form = document.querySelector("form");
 form.addEventListener("submit", clickSearchButton);
 
 // date update
-function dateUpdate (date) {
-    currentDate.innerHTML = `${currentDay}, ${currentHour}:${currentMinute}`;
+
+function updateDate(date) {
+  presentDate.innerHTML = `${currentDay}, ${currentHour}:${currentMinute}`;
 }
 
 let now = new Date();
-let days = ["Sunday", "Monday"
-"Tuesday",
-"Wednesday",
-"Thursday",
-"Friday",
-"Saturday"];
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 let currentDay = days[now.getDay()];
 console.log(currentDay);
@@ -62,5 +81,5 @@ if (currentMinute < 10) {
 console.log(currentHour);
 console.log(currentMinute);
 
-let currentDate = document.querySelector("#current-date");
-currentDate.addEventListener("submit", updateDate);
+let presentDate = document.querySelector("#present-time");
+form.addEventListener("submit", updateDate);
