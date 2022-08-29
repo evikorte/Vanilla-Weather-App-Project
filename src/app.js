@@ -22,15 +22,15 @@ function selectedCityResults(response) {
   let currentPressure = document.querySelector("#pressure-value");
   currentPressure.innerHTML = `${response.data.main.pressure}`;
 
-  let selectWind = response.data.wind.speed;
-  console.log(selectWind);
-  let currentWind = document.querySelector("#wind-value");
-  currentWind.innerHTML = `${response.data.wind.speed}`;
-
   let selectHumidity = response.data.main.humidity;
   console.log(selectHumidity);
   let currentHumidity = document.querySelector("#humidity-value");
   currentHumidity.innerHTML = `${response.data.main.humidity}`;
+
+  let selectWind = response.data.wind.speed;
+  console.log(selectWind);
+  let currentWind = document.querySelector("#wind-value");
+  currentWind.innerHTML = `${response.data.wind.speed}`;
 }
 
 function clickSearchButton(event) {
