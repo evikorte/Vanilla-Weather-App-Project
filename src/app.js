@@ -11,11 +11,20 @@ function selectedCityResults(response) {
   console.log(selectCityTemp);
   let currentTemp = document.querySelector("#present-degree");
   currentTemp.innerHTML = `${selectCityTemp}`;
+  //C - F issue need to be solved!
 
   let selectWeatherState = response.data.weather[0].main;
   console.log(selectWeatherState);
   let currentState = document.querySelector("#description");
   currentState.innerHTML = `${response.data.weather[0].main}`;
+
+  let selectedIcon = response.data.weather[0].icon;
+  console.log(selectedIcon);
+  let currentIcon = document.querySelector("#present-icon");
+  currentIcon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${selectedIcon}@2x.png`
+  );
 
   let selectPressure = response.data.main.pressure;
   console.log(selectPressure);
