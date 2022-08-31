@@ -1,5 +1,4 @@
-// city + temp +description update
-// extra info need to be added!
+// City selection function
 
 function selectedCityResults(response) {
   console.log(response);
@@ -13,7 +12,6 @@ function selectedCityResults(response) {
   currentTemp.innerHTML = `${selectCityTemp}`;
 
   celsiusTemp = response.data.main.temp;
-  //C - F issue need to be solved!
 
   let selectWeatherState = response.data.weather[0].main;
   console.log(selectWeatherState);
@@ -119,7 +117,7 @@ currentButton.addEventListener("click", getCurrentLocation);
 
 // Fahrenheit conversion
 
-function convertToCelsius(event) {
+function convertToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = celsiusTemp * (9 / 5) + 32;
   console.log(fahrenheitTemp);
@@ -129,6 +127,16 @@ function convertToCelsius(event) {
 
 let fahrenheitConverter = document.querySelector("#fahrenheit-sign");
 console.log(fahrenheitConverter);
-fahrenheitConverter.addEventListener("click", convertToCelsius);
+fahrenheitConverter.addEventListener("click", convertToFahrenheit);
 
 let celsiusTemp = null;
+
+//Celsius conversion
+function convertToCelius(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#present-degree");
+  temperatureElement.innerHTML = Math.round(celsiusTemp);
+}
+
+let celsiusConverter = document.querySelector("#celsius-sign");
+celsiusConverter.addEventListener("click", convertToCelius);
