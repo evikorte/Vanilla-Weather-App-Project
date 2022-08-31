@@ -56,9 +56,6 @@ function clickSearchButton(event) {
   axios.get(apiUrl).then(selectedCityResults);
 }
 
-let form = document.querySelector("form");
-form.addEventListener("submit", clickSearchButton);
-
 // date update
 
 function updateDate(date) {
@@ -91,9 +88,6 @@ if (currentMinute < 10) {
 console.log(currentHour);
 console.log(currentMinute);
 
-let presentDate = document.querySelector("#present-time");
-form.addEventListener("submit", updateDate);
-
 //Current location function
 function searchCurrentLocation(position) {
   let latitude = position.coords.latitude;
@@ -112,10 +106,6 @@ function getCurrentLocation(event) {
   navigator.geolocation.getCurrentPosition(searchCurrentLocation);
 }
 
-let currentButton = document.querySelector("#current-position-button");
-currentButton.addEventListener("click", getCurrentLocation);
-currentButton.addEventListener("click", updateDate);
-
 // Fahrenheit conversion
 
 function convertToFahrenheit(event) {
@@ -128,10 +118,6 @@ function convertToFahrenheit(event) {
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
-let fahrenheitConverter = document.querySelector("#fahrenheit-sign");
-console.log(fahrenheitConverter);
-fahrenheitConverter.addEventListener("click", convertToFahrenheit);
-
 //Celsius conversion
 function convertToCelius(event) {
   event.preventDefault();
@@ -141,7 +127,23 @@ function convertToCelius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
-let celsiusConverter = document.querySelector("#celsius-sign");
-celsiusConverter.addEventListener("click", convertToCelius);
+//
 
 let celsiusTemp = null;
+
+let form = document.querySelector("form");
+form.addEventListener("submit", clickSearchButton);
+
+let presentDate = document.querySelector("#present-time");
+form.addEventListener("submit", updateDate);
+
+let currentButton = document.querySelector("#current-position-button");
+currentButton.addEventListener("click", getCurrentLocation);
+currentButton.addEventListener("click", updateDate);
+
+let fahrenheitConverter = document.querySelector("#fahrenheit-sign");
+console.log(fahrenheitConverter);
+fahrenheitConverter.addEventListener("click", convertToFahrenheit);
+
+let celsiusConverter = document.querySelector("#celsius-sign");
+celsiusConverter.addEventListener("click", convertToCelius);
