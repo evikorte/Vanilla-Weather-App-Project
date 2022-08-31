@@ -58,8 +58,6 @@ function clickSearchButton(event) {
   axios.get(apiUrl).then(selectedCityResults);
 }
 
-let celsiusTemp = null;
-
 let form = document.querySelector("form");
 form.addEventListener("submit", clickSearchButton);
 
@@ -132,3 +130,5 @@ function convertToCelsius(event) {
 let fahrenheitConverter = document.querySelector("#fahrenheit-sign");
 console.log(fahrenheitConverter);
 fahrenheitConverter.addEventListener("click", convertToCelsius);
+
+let celsiusTemp = null;
