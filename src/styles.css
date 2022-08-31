@@ -1,6 +1,5 @@
 form {
   margin: 0px 20px;
-  background-color: transparent;
 }
 .container {
   margin: 30px auto;
@@ -21,24 +20,32 @@ form {
   padding: 10px 20px;
 }
 #metrics {
-  font-size: 14px;
+  font-size: 15px;
   position: relative;
   top: -10px;
+  left: +35px;
 }
+
 #icon {
-  font-size: 27px;
+  font-size: 20px;
 }
 .cityDetails {
   text-align: left;
   padding: 20px auto;
 }
 
-#present-city {
-  font-size: 30px;
+#present-icon {
+  font-size: 12px;
 }
-#present-time,
-#present-temperature {
+#present-degree {
   font-size: 20px;
+}
+#present-city,
+#description {
+  font-size: 20px;
+}
+#present-time {
+  font-size: 15px;
 }
 .extraInfo {
   font-size: 20px;
