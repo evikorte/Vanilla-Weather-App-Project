@@ -26,6 +26,8 @@ function selectedCityResults(response) {
     `http://openweathermap.org/img/wn/${selectedIcon}@2x.png`
   );
 
+  currentIcon.setAttribute("alt", response.data.weather[0].description);
+
   let selectPressure = response.data.main.pressure;
   console.log(selectPressure);
   let currentPressure = document.querySelector("#pressure-value");
