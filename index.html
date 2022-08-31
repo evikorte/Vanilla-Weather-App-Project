@@ -34,7 +34,7 @@
             <div id="present-temperature">
               <div id="present-degree">..</div>
               <span id="metrics"
-                ><a href="#" id="celsius-sign">°C </a> /
+                ><a href="#" id="celsius-sign" class="active">°C </a> /
                 <a href="#" id="fahrenheit-sign"> °F</a>
               </span>
 
@@ -63,12 +63,14 @@
         <form action="search-engine" id="search-engine">
           <input
             type="text"
-            placeholder="Choose your Location"
+            placeholder="Choose a location"
             name="City"
             id="city"
           />
           <input type="submit" value="Search" id="search-button" />
-          <button id="current-position-button">🧭</button>
+          <button alt="Current location" id="current-position-button">
+            🧭
+          </button>
         </form>
         <br />
         <div class="hourlyForcast">

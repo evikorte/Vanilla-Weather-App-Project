@@ -1,6 +1,9 @@
 form {
   margin: 0px 20px;
 }
+a {
+  text-decoration: none;
+}
 .container {
   margin: 30px auto;
 }
@@ -26,6 +29,12 @@ form {
   left: +35px;
 }
 
+.cityDetails .active {
+  color: white;
+  cursor: default;
+  text-decoration: none;
+}
+
 #icon {
   font-size: 20px;
 }
@@ -37,8 +46,8 @@ form {
 #present-icon {
   font-size: small;
   position: relative;
-  top: -60px;
-  left: 70px;
+  top: -80px;
+  left: 90px;
 }
 #present-temperature {
   height: 110px;

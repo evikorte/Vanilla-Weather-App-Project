@@ -114,6 +114,7 @@ function getCurrentLocation(event) {
 
 let currentButton = document.querySelector("#current-position-button");
 currentButton.addEventListener("click", getCurrentLocation);
+currentButton.addEventListener("click", updateDate);
 
 // Fahrenheit conversion
 
@@ -121,6 +122,8 @@ function convertToFahrenheit(event) {
   event.preventDefault();
   let fahrenheitTemp = celsiusTemp * (9 / 5) + 32;
   console.log(fahrenheitTemp);
+  celsiusConverter.classList.remove("active");
+  fahrenheitConverter.classList.add("active");
   let temperatureElement = document.querySelector("#present-degree");
   temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
@@ -129,14 +132,16 @@ let fahrenheitConverter = document.querySelector("#fahrenheit-sign");
 console.log(fahrenheitConverter);
 fahrenheitConverter.addEventListener("click", convertToFahrenheit);
 
-let celsiusTemp = null;
-
 //Celsius conversion
 function convertToCelius(event) {
   event.preventDefault();
+  celsiusConverter.classList.add("active");
+  fahrenheitConverter.classList.remove("active");
   let temperatureElement = document.querySelector("#present-degree");
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
 let celsiusConverter = document.querySelector("#celsius-sign");
 celsiusConverter.addEventListener("click", convertToCelius);
+
+let celsiusTemp = null;
