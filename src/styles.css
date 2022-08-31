@@ -35,7 +35,13 @@ form {
 }
 
 #present-icon {
-  font-size: 12px;
+  font-size: small;
+  position: relative;
+  top: -60px;
+  left: 70px;
+}
+#present-temperature {
+  height: 110px;
 }
 #present-degree {
   font-size: 20px;

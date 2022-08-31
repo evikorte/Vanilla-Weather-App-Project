@@ -115,3 +115,17 @@ function getCurrentLocation(event) {
 
 let currentButton = document.querySelector("#current-position-button");
 currentButton.addEventListener("click", getCurrentLocation);
+
+// Fahrenheit conversion
+
+function convertToCelsius(event) {
+  event.preventDefault();
+  let fahrenheitTemp = 14 * (9 / 5) + 32;
+  console.log(fahrenheitTemp);
+  let temperatureElement = document.querySelector("#present-degree");
+  temperatureElement.innerHTML = fahrenheitTemp;
+}
+
+let fahrenheitConverter = document.querySelector("#fahrenheit-sign");
+console.log(fahrenheitConverter);
+fahrenheitConverter.addEventListener("click", convertToCelsius);
