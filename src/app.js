@@ -7,10 +7,12 @@ function selectedCityResults(response) {
   let currentCityNote = document.querySelector("#present-city");
   currentCityNote.innerHTML = `Currently in ${response.data.name}:`;
 
-  let selectCityTemp = Math.round(response.data.main.temp);
+  let selectCityTemp = Math.round(celsiusTemp);
   console.log(selectCityTemp);
   let currentTemp = document.querySelector("#present-degree");
   currentTemp.innerHTML = `${selectCityTemp}`;
+
+  celsiusTemp = response.data.main.temp;
   //C - F issue need to be solved!
 
   let selectWeatherState = response.data.weather[0].main;
@@ -25,7 +27,6 @@ function selectedCityResults(response) {
     "src",
     `http://openweathermap.org/img/wn/${selectedIcon}@2x.png`
   );
-
   currentIcon.setAttribute("alt", response.data.weather[0].description);
 
   let selectPressure = response.data.main.pressure;
@@ -56,6 +57,8 @@ function clickSearchButton(event) {
 
   axios.get(apiUrl).then(selectedCityResults);
 }
+
+let celsiusTemp = null;
 
 let form = document.querySelector("form");
 form.addEventListener("submit", clickSearchButton);
@@ -120,10 +123,10 @@ currentButton.addEventListener("click", getCurrentLocation);
 
 function convertToCelsius(event) {
   event.preventDefault();
-  let fahrenheitTemp = 14 * (9 / 5) + 32;
+  let fahrenheitTemp = celsiusTemp * (9 / 5) + 32;
   console.log(fahrenheitTemp);
   let temperatureElement = document.querySelector("#present-degree");
-  temperatureElement.innerHTML = fahrenheitTemp;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemp);
 }
 
 let fahrenheitConverter = document.querySelector("#fahrenheit-sign");
