@@ -6,12 +6,11 @@ function selectedCityResults(response) {
   let currentCityNote = document.querySelector("#present-city");
   currentCityNote.innerHTML = `Currently in ${response.data.name}:`;
 
+  celsiusTemp = response.data.main.temp;
   let selectCityTemp = Math.round(celsiusTemp);
   console.log(selectCityTemp);
   let currentTemp = document.querySelector("#present-degree");
   currentTemp.innerHTML = `${selectCityTemp}`;
-
-  celsiusTemp = response.data.main.temp;
 
   let selectWeatherState = response.data.weather[0].main;
   console.log(selectWeatherState);
