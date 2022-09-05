@@ -3,6 +3,8 @@ form {
 }
 a {
   text-decoration: none;
+  text-shadow: 1px 1px white;
+  color: #eb6e4b;
 }
 .container {
   margin: 30px auto;
@@ -79,6 +81,7 @@ a {
 
 .col {
   text-align: center;
+  width: 300px;
 }
 
 #code-reference {

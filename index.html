@@ -72,105 +72,87 @@
             🧭
           </button>
         </form>
-        <br />
-        <div class="hourlyForcast">
-          <div class="row todayHours">
-            <div class="col now">15:22</div>
-            <div class="col nowRound">16:00</div>
-            <div class="col nowRound+2">18:00</div>
-            <div class="col nowRound+4">20:00</div>
-            <div class="col nowRound+6">22:00</div>
-          </div>
-          <div class="row todayEmoji">
-            <div class="col nowEmoji" id="icon">😊</div>
-            <div class="col nowRoundEmoji" id="icon">😊</div>
-            <div class="col nowRoundEmoji+2" id="icon">🌧️</div>
-            <div class="col nowRoundEmoji+4" id="icon">🌥️</div>
-            <div class="col nowRoundEmoji+6" id="icon">😊</div>
-          </div>
-          <div class="row todayTemp">
-            <div class="col nowTemp">
-              25
-              <div id="celsius-sign">
-                °C / <span id=" fahrenheit-sign">°F</span>
-              </div>
-            </div>
-            <div class="col nowRoundTemp">
-              25
-              <div id="celsius-sign">
-                °C / <span id=" fahrenheit-sign">°F</span>
-              </div>
-            </div>
-            <div class="col nowRoundTemp+2">
-              25
-              <div id="celsius-sign">
-                °C / <span id=" fahrenheit-sign">°F</span>
-              </div>
-            </div>
-            <div class="col nowRoundTemp+4">
-              25
-              <div id="celsius-sign">
-                °C / <span id=" fahrenheit-sign">°F</span>
-              </div>
-            </div>
-            <div class="col nowRoundTemp+6">
-              25
-              <div id="celsius-sign">
-                °C / <span id=" fahrenheit-sign">°F</span>
-              </div>
-            </div>
-          </div>
-        </div>
+
         <br />
         <div class="dailyForcast">
           <div class="row days">
-            <div class="col tomorrow">Tomorrow</div>
-            <div class="col tomorrow+1">The day after tomorrow</div>
-            <div class="col tomorrow+2">Today+3 day</div>
-            <div class="col tomorrow+3">Today+4 days</div>
-            <div class="col tomorrow+4">Today+5 days</div>
-          </div>
-          <div class="row daysEmoji">
-            <div class="col tomorrowEmoji" id="icon">😊</div>
-            <div class="col tomorrowEmoji+1" id="icon">😊</div>
-            <div class="col tomorrowEmoji+2" id="icon">🌧️</div>
-            <div class="col tomorrowEmoji+3" id="icon">🌥️</div>
-            <div class="col tomorrowEmoji+4" id="icon">😊</div>
-          </div>
+            <div class="col tomorrow">
+              Tuesday
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                alt="Present temperature icon"
+                id="forecast-icon"
+                width="45"
+              />
+              <div class="tomorrowTemp">
+                25
+                <span id="celsius-sign"></span>
+                °C / <span id=" fahrenheit-sign">°F</span>
+              </div>
+            </div>
 
-          <div class="row daysTemp">
-            <div class="col tomorrowTemp">
-              25
-              <div id="celsius-sign">
+            <div class="col tomorrow+1">
+              Wednesday
+              <img
+                src="http://openweathermap.org/img/wn/02d@2x.png"
+                alt="Present temperature icon"
+                id="forecast-icon"
+                width="45"
+              />
+              <div class="tomorrow+1Temp">
+                25
+                <span id="celsius-sign"></span>
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col tomorrowTemp+1">
-              25
-              <div id="celsius-sign">
+
+            <div class="col tomorrow+2">
+              Thursday
+              <img
+                src="http://openweathermap.org/img/wn/03d@2x.png"
+                alt="Present temperature icon"
+                id="forecast-icon"
+                width="45"
+              />
+              <div class="tomorrow+2Temp">
+                25
+                <span id="celsius-sign"></span>
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col tomorrowTemp+2">
-              25
-              <div id="celsius-sign">
+
+            <div class="col tomorrow+3">
+              Friday
+              <img
+                src="http://openweathermap.org/img/wn/10d@2x.png"
+                alt="Present temperature icon"
+                id="forecast-icon"
+                width="45"
+              />
+              <div class="tomorrow+3Temp">
+                25
+                <span id="celsius-sign"></span>
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
-            <div class="col tomorrowTemp+3">
-              25
-              <div id="celsius-sign">
-                °C / <span id=" fahrenheit-sign">°F</span>
-              </div>
-            </div>
-            <div class="col tomorrowTemp+4">
-              25
-              <div id="celsius-sign">
+
+            <div class="col tomorrow+4">
+              Saturday
+              <img
+                src="http://openweathermap.org/img/wn/11d@2x.png"
+                alt="Present temperature icon"
+                id="forecast-icon"
+                width="45"
+              />
+              <div class="tomorrow+4Temp">
+                25
+                <span id="celsius-sign"></span>
                 °C / <span id=" fahrenheit-sign">°F</span>
               </div>
             </div>
           </div>
         </div>
+
         <div id="code-reference">
           Coded by
           <a
