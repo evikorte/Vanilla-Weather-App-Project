@@ -143,7 +143,7 @@ function getDailyForecast(coordinates) {
 }
 
 function displayDailyForecast(response) {
-  console.log(response);
+  console.log(response.data.daily);
 
   let forcastElement = document.querySelector("#daily-forecast");
   let forecastHTML = `<div class="row">`;
