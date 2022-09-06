@@ -40,6 +40,8 @@ function selectedCityResults(response) {
   console.log(selectWind);
   let currentWind = document.querySelector("#wind-value");
   currentWind.innerHTML = `${response.data.wind.speed}`;
+
+  displayDailyForecast();
 }
 
 function clickSearchButton(event) {
@@ -126,6 +128,32 @@ function convertToCelius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
+//display daily forecast:
+function displayDailyForecast() {
+  let forcastElement = document.querySelector("#daily-forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="col tomorrow">
+              ${day}
+              <img
+                src="http://openweathermap.org/img/wn/01d@2x.png"
+                alt="Present temperature icon"
+                id="forecast-icon"
+                width="45"
+              />
+              <div class="tomorrowTemp">
+                <span class="minTemp">20°</span>
+                <span class="maxTemp">25°</span>
+              </div>
+            </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forcastElement.innerHTML = forecastHTML;
+}
 //
 
 let celsiusTemp = null;
