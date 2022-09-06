@@ -41,14 +41,15 @@ function selectedCityResults(response) {
   let currentWind = document.querySelector("#wind-value");
   currentWind.innerHTML = `${response.data.wind.speed}`;
 
-  displayDailyForecast();
+  //Daily forecast calls
+  getDailyForecast(response.data.coord);
 }
 
 function clickSearchButton(event) {
   event.preventDefault();
 
   let city = document.querySelector("#city").value;
-  let apiKey = "a38462addd821b469c162937a66aa309";
+  let apiKey = "4770548bed49c5d96b7201c497695887";
   let unit = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${unit}&appid=${apiKey}`;
 
@@ -94,9 +95,9 @@ function searchCurrentLocation(position) {
   let latitude = position.coords.latitude;
   let longitude = position.coords.longitude;
   let unit = "metric";
-  let apiKey = "a38462addd821b469c162937a66aa309";
+  let apiKey = "4770548bed49c5d96b7201c497695887";
 
-  apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${unit}`;
   console.log(apiUrl);
 
   axios.get(apiUrl).then(selectedCityResults);
@@ -128,8 +129,22 @@ function convertToCelius(event) {
   temperatureElement.innerHTML = Math.round(celsiusTemp);
 }
 
-//display daily forecast:
-function displayDailyForecast() {
+//gat and display daily forecast:
+
+function getDailyForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "4770548bed49c5d96b7201c497695887";
+  let lon = coordinates.lon;
+  let lat = coordinates.lat;
+  let unit = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/3.0/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${unit}`;
+  console.log(apiUrl);
+  axios.get(apiUrl).then(displayDailyForecast);
+}
+
+function displayDailyForecast(response) {
+  console.log(response);
+
   let forcastElement = document.querySelector("#daily-forecast");
   let forecastHTML = `<div class="row">`;
   let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
