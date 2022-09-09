@@ -90,6 +90,8 @@ if (currentMinute < 10) {
 function formatForecastDates(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDate();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  console.log(days);
   return days[day];
 }
 console.log(currentHour);
@@ -187,15 +189,6 @@ function displayDailyForecast(response) {
 //
 
 let celsiusTemp = null;
-let days = [
-  "Sunday",
-  "Monday",
-  "Tuesday",
-  "Wednesday",
-  "Thursday",
-  "Friday",
-  "Saturday",
-];
 
 let form = document.querySelector("form");
 form.addEventListener("submit", clickSearchButton);
