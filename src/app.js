@@ -94,7 +94,7 @@ function formatForecastDates(timestamp) {
   let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   console.log(days);
 
-  return day;
+  return days[day];
 }
 console.log(currentHour);
 console.log(currentMinute);
