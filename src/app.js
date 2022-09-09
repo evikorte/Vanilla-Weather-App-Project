@@ -87,6 +87,11 @@ if (currentMinute < 10) {
   currentMinute = `0${currentMinute}`;
 }
 
+function formatForecastDates(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDate();
+  return days[day];
+}
 console.log(currentHour);
 console.log(currentMinute);
 
@@ -143,27 +148,37 @@ function getDailyForecast(coordinates) {
 }
 
 function displayDailyForecast(response) {
-  console.log(response.data.daily);
+  let forcastData = response.data.daily;
 
   let forcastElement = document.querySelector("#daily-forecast");
   let forecastHTML = `<div class="row">`;
-  let days = ["Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="col tomorrow">
-              ${day}
+
+  forcastData.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="col tomorrow">
+             <div class="forcast-day"> ${formatForecastDates(
+               forecastDay.dt
+             )} </div>
               <img
-                src="http://openweathermap.org/img/wn/01d@2x.png"
+                src="http://openweathermap.org/img/wn/${
+                  forecastDay.weather[0].icon
+                }@2x.png"
                 alt="Present temperature icon"
                 id="forecast-icon"
                 width="45"
               />
               <div class="tomorrowTemp">
-                <span class="minTemp">20°</span>
-                <span class="maxTemp">25°</span>
+                <span class="maxTemp">${Math.round(
+                  forecastDay.temp.max
+                )}°</span>
+                <span class="minTemp">${Math.round(
+                  forecastDay.temp.min
+                )}°</span>
               </div>
             </div>`;
+    }
   });
 
   forecastHTML = forecastHTML + `</div>`;
@@ -172,6 +187,15 @@ function displayDailyForecast(response) {
 //
 
 let celsiusTemp = null;
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
 
 let form = document.querySelector("form");
 form.addEventListener("submit", clickSearchButton);
