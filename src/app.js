@@ -90,16 +90,11 @@ if (currentMinute < 10) {
 function formatForecastDates(timestamp) {
   let date = new Date(timestamp * 1000);
   let day = date.getDate();
-  let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday",
-  ];
-  return days[day];
+  console.log(day);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  console.log(days);
+
+  return day;
 }
 console.log(currentHour);
 console.log(currentMinute);
